@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap');
+
+:root {
+  --main-bg: #fafbfc;
+  --overlay-bg: rgba(34, 34, 34, 0.55);
+  --primary: #ad4d36;
+  --white: #fff;
+  --text-main: #fff;
+  --font-main: 'SF Pro Display', Arial, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: var(--main-bg);
+  color: var(--text-main);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 56px 0 56px;
+  box-sizing: border-box;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 36px;
+}
+
+.nav-list li a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.nav-list li a:hover {
+  color: var(--primary);
+}
+
+.contact {
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('hero-bg.jpg') center center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--overlay-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 32px 0;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  text-shadow: 0 2px 16px rgba(0,0,0,0.2);
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 18px 40px;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 28px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(173, 77, 54, 0.15);
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.hero-btn:hover {
+  background: #903f2c;
+  box-shadow: 0 8px 24px rgba(173, 77, 54, 0.2);
+}
+
+/* --- Mobile adaptation --- */
+@media (max-width: 900px) {
+  .header {
+    padding: 20px 12px 0 12px;
+  }
+  .nav-list {
+    gap: 18px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-btn {
+    padding: 13px 24px;
+    font-size: 1rem;
+  }
+  .contact {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 6px 0 6px;
+    background: transparent;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .nav-list {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-list li {
+    width: 100%;
+  }
+  .nav-list li a {
+    font-size: 1.07rem;
+    padding: 6px 0;
+    display: block;
+  }
+  .contact {
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+    margin-left: 0;
+  }
+  .hero-title {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+  .hero-overlay {
+    min-height: 100vh;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  .hero-btn {
+    padding: 10px 12px;
+    font-size: 0.97rem;
+  }
+}
+
+body {
+  background: var(--main-bg);
+}
